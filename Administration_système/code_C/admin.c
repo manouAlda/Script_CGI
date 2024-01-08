@@ -69,7 +69,7 @@ char* withoutHex(char* tab) {
 void print_html (){
     FILE* file = NULL;
     char contenu[255];
-    file = fopen("../HTML/andrana.html","r");
+    file = fopen("../HTML/main.html","r");
         for(int i=0; feof(file)!=1; i++){
             fgets(contenu, 255, file);
             printf("%s",contenu);
