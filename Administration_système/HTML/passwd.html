@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Information</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            a{
+                text-decoration: none;
+            }
+            body{
+                background-image: url("../img/ubuntu.jpg");
+                background-size: cover;
+            }
+            #entete{
+                font-family:monospace;
+                font-size: larger;
+                display: flex;
+                color: white;
+            }
+            .logo{
+                width: 5vw;
+                height: 5vw;
+            }
+            .nom{
+                padding: 20px;
+                cursor: pointer;
+                color: white;
+            }
+            .siteName{
+                display: flex;
+                width: 40vw;
+            }
+            .menu{
+                display: flex;
+                width: 50vw;
+            }
+            .signIn{
+                display: flex;
+            }
+            #logIn{
+                width: 3vw;
+                height: 3vw;
+            }
+            .button {
+                margin-top: 20px;
+                padding: 6px 24px;
+                border: 2px solid #fff;
+                background: transparent;
+                border-radius: 6px;
+                cursor: pointer;
+                color: #fff;
+            }
+            .button:active {
+                transform: scale(0.98);
+            }
+            .title {
+                font-family:fantasy;
+                font-size: 30px;
+                line-height: 1.2;
+                color: #d61c22;
+                margin-top: 3vw;
+            }
+            .t-center {
+                text-align: center;
+            }
+            table{
+                border-collapse: collapse;
+                width: 50%;
+                margin: 20px auto;
+            }
+            th, td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 13px;
+            }
+            th {
+                background: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="entete">
+            <div class="siteName">
+                <img src="../img/ubun.png" alt="Logo" class="logo">
+                <div class ="nom">
+                    <i><b>System Administration</b></i>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="http://www.manou.mg/programme/system.cgi?information=1&home=1">
+                    <div class="nom">
+                        Home
+                    </div>
+                </a>
+                <a href="http://www.manou.mg/programme/system.cgi?information=1&menu=1">
+                    <div class="nom">
+                        Menu
+                    </div>
+                </a>
+                <a href="http://www.manou.mg/programme/system.cgi?information=1&contact=1" >
+                    <div class="nom">
+                        Contact
+                    </div>
+                </a>
+            </div>

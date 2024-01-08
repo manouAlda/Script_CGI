@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>System Administration</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            body{
+                background-image: url(../img/ubuntu-2204-wallpaper-1440x810.jpg);
+                background-size: cover;
+            }
+            header nav{
+                position: fixed;
+                width: 100%;
+                left: 0;
+                top: 0;
+                z-index: 12;
+            }
+            .navbar{
+                width: 90%;
+                display: flex;
+                margin: 20px auto 0 auto;
+                align-items: center;
+                justify-content: space-between;
+            }
+            header nav .logo_nav{
+                height: 80px;
+                width: 150px;
+            }
+            .logo_nav img{
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+            nav .menus{
+                display: flex;
+            }
+            nav .menus li{
+                list-style: none;
+                margin: 0 10px;
+            }
+            nav .menus a{
+                color: #2c3e50;
+                font-size: 17px;
+                font-weight: 500;
+                text-decoration: none;
+                }
+            nav .menus a:hover{
+                color: #000;
+            }
+            nav .search-box{
+                position: relative;
+                height: 40px;
+                width: 250px;
+            }
+            a{
+                text-decoration: none;
+            }
+            #entete{
+                font-family:monospace;
+                font-size: larger;
+                display: flex;
+                color: white;
+                z-index: 100;
+            }
+            .logo{
+                width: 5vw;
+                height: 5vw;
+            }
+            .nom{
+                padding: 20px;
+                cursor: pointer;
+                color: white;
+            }
+            .siteName{
+                display: flex;
+                width: 40vw;
+            }
+            .menu{
+                display: flex;
+                width: 38vw;
+            }
+            .signIn{
+                display: flex;
+            }
+            #logIn{
+                width: 3vw;
+                height: 3vw;
+            }
+            .button {
+                margin-top: 20px;
+                padding: 6px 24px;
+                border: 2px solid #fff;
+                background: transparent;
+                border-radius: 6px;
+                cursor: pointer;
+                color: #fff;
+            }
+            .button:active {
+                transform: scale(0.98);
+            }
+            #body{
+                padding-top: 15vw;
+                padding-left: 18vw;
+                padding-right: 18vw;
+                padding-bottom: 10vw;  
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size:x-large;
+                color: white;
+            }
+            #more{
+                color: orangered;
+                padding: 15px;
+                border: none;
+                border-radius: 5vw;
+                font-size: 17px;
+            }
+            #more:hover {
+                color: white;
+                font-size: 17px;
+                background: orangered;
+                padding: 15px;
+                border-radius: 5vw;
+            }
+            #noConnect{
+                margin-top: 7vw;
+                margin-left: 32vw;
+                background: rgba(245, 222, 179, 0.452);
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size:x-large;
+                color: white;
+                width: 35vw;
+                height: 15em;
+                border-radius: 5vw;
+            }
+            #oupps{
+                width: 10vw;
+                height: 10vw;
+            }
+            #signUP{
+                max-width: 430px;
+                width: 100%;
+                background: rgba(245, 222, 179, 0.452);
+                padding: 34px;
+                border-radius: 6px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+                margin-left: 33vw;
+            }
+            .signUP h2 {
+                position: relative;
+                font-size: 22px;
+                font-weight: 600;
+                color: #333;
+            }
+            .input-box {
+                height: 52px;
+                margin: 18px 0;
+            }
+            form .input-box input {
+                height: 100%;
+                width: 100%;
+                outline: none;
+                padding: 0 15px;
+                font-size: 17px;
+                font-weight: 400;
+                color: #333;
+                border: 1.5px solid #C7BEBE;
+                border-bottom-width: 1.5px;
+                border-bottom-width: 2.5px;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+            .submit input {
+                height: 52px;
+                width: 100%;
+                outline: none;
+                padding: 15px;
+                font-size: 17px;
+                font-weight: 400;
+                color: #fff;
+                letter-spacing: 1px;
+                border: none;
+                border-radius: 6px;
+                background: #e0102c;
+                cursor: pointer;
+            }
+            .input-box input:focus{
+                border-color: #e6972f;
+            }
+            form .text h3 {
+                color: #333;
+                width: 100%;
+                text-align: center;
+            }
+            form .text h3 a {
+                color: #e0102c;
+                text-decoration: none;
+            }
+            form .text h3 a:hover{
+                text-decoration: underline;
+            }
+            .title {
+                font-family:fantasy;
+                font-size: 30px;
+                line-height: 1.2;
+                color: #d61c22;
+                margin-top: 3vw;
+            }
+            .t-center {
+                text-align: center;
+            }
+            #home {
+                background: white;
+                border-top-left-radius: 5vw;
+                border-top-right-radius: 5vw;
+                padding-top: 5vw;
+                padding-bottom: 7vw;
+                text-align: center;   
+            }
+            .element{
+                height: 52px;
+                width: 50%;
+                margin: 20px 25%;
+                padding: 15px;
+                font-size: 17px;
+                font-weight: 400;
+                border-radius: 3vw;
+                letter-spacing: 1px;
+                border: none;
+                background: burlywood;
+                cursor: pointer;
+            }
+            .infos:active {
+                transform: scale(0.98);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="navbar">
+                    <div class="logo_nav">
+                        <img src="../img/ubun.png" alt="Logo" class="logo">
+                    </div>
+                    <ul class="menus">
+                        <a href="http://www.proud.com/cgi-bin/system.cgi?information=1&home=1">
+                            Home
+                        </a>
+                        <a href="http://www.proud.com/cgi-bin/system.cgi?information=1&menu=1">
+                            Menu
+                        </a>
+                        <a href="http://www.proud.com/cgi-bin/system.cgi?information=1&contact=1">
+                            Contact
+                        </a>
+                    </ul>
+                    <div class="box">
+                        <div class='signIn'>
+                            <a href='http://www.proud.com/cgi-bin/system.cgi?information=1&infos_login=1' style='color: white;'><img src='../img/login.png' alt='Icon' class='logo' id='logIn'> AZIZ</a>
+                            <a href='http://www.proud.com/cgi-bin/system.cgi?information=1&exit=1'><button class='button'>Deconnexion</button></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="entete">
+                    <div class="siteName">
+                        <img src="../img/ubun.png" alt="Logo" class="logo">
+                        <div class ="nom">
+                            <i><b>System Administration</b></i>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="http://www.proud.com/cgi-bin/system.cgi?information=1&home=1">
+                            <div class="nom">
+                                Home
+                            </div>
+                        </a>
+                        <a href="http://www.proud.com/cgi-bin/system.cgi?information=1&menu=1">
+                            <div class="nom">
+                                Menu
+                            </div>
+                        </a>
+                        <a href="http://www.proud.com/cgi-bin/system.cgi?information=1&contact=1" >
+                            <div class="nom">
+                                Contact
+                            </div>
+                        </a>
+                    </div>
+                </div> -->
+            </nav>
+            <!-- <div class='signIn'><a href='http://www.proud.com/cgi-bin/system.cgi?information=1&infos_login=1' style='color: white;'><img src='../img/login.png' alt='Icon' class='logo' id='logIn'> AZIZ</a><a href='http://www.proud.com/cgi-bin/system.cgi?information=1&exit=1'><button class='button'>Deconnexion</button></a></div></div> -->
+        </header>
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+    <title>H&eacute;bergement site</title>
+    <style>
+        @font-face{
+            font-family: "font";
+            src:url(fonts/montserrat/Montserrat-Regular.otf)
+        }
+        #directive{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size:larger;
+            font-style:oblique;
+            display: flex;
+        }
+        .acceuil{
+            padding: 10px;
+        }
+        .formulaire{
+            padding: 10px;
+        }
+        .formulaire:hover{
+            padding: 10px;
+            background: lightsteelblue;
+        }
+        h1{
+            text-transform:capitalize  ;
+            letter-spacing: 3px;
+            text-align:center ;
+            /* les tailles de police doivent etre en REM  rem=16px 2rem=h1*/
+            font-size: 2.5rem;
+            text-shadow: 3px 3px 8px #e9a1ff;
+            color: #64d19b;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+        }
+        h2{
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color:crimson;
+            font-family:cursive;
+        }
+        legend{
+            font-family: "font", verdana;
+        }
+        figcaption{
+            text-align: center;
+            color:darkslategray;
+            font-weight: bolder;
+            font-size: larger;
+        }
+        .send_form{
+            color:royalblue;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .send_form:hover{
+            color: white;
+            background: royalblue ;
+            font-weight: bold;
+            cursor:pointer;
+        }
+        .sous-input1 {
+            display: none;
+        }
+        .sous-input2 {
+            display: none;
+        }
+        .sous-input3 {
+            display: none;
+        }
+        #opt:checked ~ .sous-input1{
+            display: block;
+        }
+        #allow:checked ~ .sous-input2{
+            display: block;
+        }
+        #req:checked ~ .sous-input3{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+        <h1>
+            Host your site for free
+        </h1>
+        <div>
+            <fieldset>
+                <legend>Information</legend>
+                <form action="http://www.site.com/site.cgi" method="get">
+                    <figcaption>Site configuration</figcaption>
+                    <br>
+                    Server Name :  <input type="text" name="server" placeholder="www.example.com" required>
+                    <br><br>
+                    Server Admin : <input type="text" name="admin" value="webmaster@locahost">
+                    <br><br>
+                    Error log : <input type="text" name="error" value="error.log">
+                    <br><br>
+                    <!-- Access log : <input type="text" name="access" value="access.log">
+                    <br><br> -->
+                    <h2>Directory</h2>
+                    Document Root : <input type="text" name="document" placeholder="/var/www/html" required>
+                    <br><br>
+                    <!-- File : <input type="file" name="file" >
+                    <br><br> -->
+                    <input type="checkbox" name="directive" id="opt" value="Options"> Options  <br>
+                    <div class="sous-input1">
+                        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="Options" value="FollowSymLinks"> FollowSymLinks
+                        <br>
+                        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="Options" value="Indexes"> Indexes
+                        <br>
+                        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="Options" value="ExecCGI">ExecCGI
+                        <br>
+                        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="Options" value="All"> All
+                        <br>
+                    </div>
+
+                    <input type="checkbox" name="directive" id="allow" value="AllowOverride"> AllowOverride  <br>
+                    <div class="sous-input2">
+                        &nbsp;&nbsp;&nbsp;<input type="radio" name="allow" value="All"> All 
+                        <br>
+                        &nbsp;&nbsp;&nbsp;<input type="radio" name="allow" value="None">  None
+                        <br>
+                    </div>
+
+                    <input type="checkbox" name="directive" value="AddHandler"> AddHandler cgi-script .cgi
+                    <br>
+                    <input type="checkbox" name="directive" id="req" value="Require"> Require  <br>
+                    <div class="sous-input3">
+                        &nbsp;&nbsp;&nbsp;<input type="radio" name="require" value="All"> All granted
+                        <br>
+                        <!-- &nbsp;&nbsp;&nbsp;<input type="radio" name="" value="ip">IP address 
+                        <br> -->
+                    </div>
+                    
+                    <center>
+                        <input type="submit" value="Submit" class="send_form">
+                    </center>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>
